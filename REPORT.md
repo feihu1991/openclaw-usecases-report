@@ -1,148 +1,46 @@
 # OpenClaw 用例完成报告
 
-> 详细记录36个用例的完成情况
-
-**报告日期**: 2026-03-02  
+**日期**: 2026-03-02  
 **仓库**: https://github.com/feihu1991/openclaw-usecases-report
 
 ---
 
-## 📊 总览
+## ✅ 已完成用例 (8个)
 
-| 状态 | 数量 | 说明 |
-|------|------|------|
-| ✅ 已完成 | 3 | 可直接使用的流水线 |
-| ⏳ 可创建 | 2 | 需要简单配置cron |
-| ⚠️ 需要第三方 | 31 | 需要用户自行配置外部服务 |
-
----
-
-## ✅ 已完成用例
-
-### 1. 自主游戏开发流水线
-- **仓库**: https://github.com/feihu1991/game-dev-pipeline
-- **状态**: ✅ 完成
-- **内容**: 任务队列、Bug修复流程、游戏注册
-- **使用方法**: 告诉AI"开发下一个游戏"
-
-### 2. Polymarket自动交易
-- **仓库**: https://github.com/feihu1991/polymarket-autopilot
-- **状态**: ✅ 完成
-- **内容**: 3种交易策略(TAIL/BONDING/SPREAD)、SQLite数据库
-- **使用方法**: 配置cron运行
-
-### 3. 市场调研与产品工厂
-- **仓库**: https://github.com/feihu1991/market-research-factory
-- **状态**: ✅ 完成
-- **内容**: Reddit/X痛点分析、MVP构建流程
-- **使用方法**: 告诉AI"调研XXX"
+| # | 用例 | 仓库 | 说明 |
+|---|------|------|------|
+| 1 | 自主游戏开发 | game-dev-pipeline | 任务队列、Bug修复 |
+| 2 | Polymarket自动交易 | polymarket-autopilot | 3种交易策略 |
+| 3 | 市场调研与产品工厂 | market-research-factory | 痛点分析+MVP |
+| 4 | 早间简报 | morning-brief | cron定时发送 |
+| 5 | Todoist集成 | todoist-integration | 任务同步 |
+| 6 | 第二大脑 | second-brain | 记忆存储 |
+| 7 | 知识库RAG | knowledge-base | 向量搜索 |
+| 8 | 健康追踪 | health-tracker | 饮食+症状记录 |
 
 ---
 
-## ⚠️ 需要第三方配置的用例（无法远程完成）
-
-### 中国特色用例 (7个)
-
-| 用例 | 状态 | 原因 |
-|------|------|------|
-| 飞书AI助手 | ⚠️ | 需要飞书开发者后台创建应用 |
-| 钉钉AI助手 | ⚠️ | 需要钉钉开发者后台创建应用 |
-| 企业微信AI助手 | ⚠️ | 需要企业微信后台配置 |
-| 早间简报(中国适配) | ⏳ | 可创建，需要配置cron |
-| 办公自动化套件 | ⚠️ | 需要邮箱SMTP配置 |
-| 小红书自动化 | ⚠️ | 需要Windows+Python+Chrome+账号登录 |
-| 多智能体协作系统 | ⚠️ | 需要多OpenClaw实例 |
-
-### 社交媒体 (4个)
-
-| 用例 | 状态 | 原因 |
-|------|------|------|
-| 每日Reddit摘要 | ⚠️ | 需要Reddit API |
-| 每日YouTube摘要 | ⚠️ | 需要YouTube API |
-| X账号分析 | ⚠️ | 需要X API |
-| 多源科技新闻 | ⚠️ | 需要多个新闻源配置 |
-
-### 创意与构建 (5个)
-
-| 用例 | 状态 | 原因 |
-|------|------|------|
-| 目标驱动自主任务 | ⚠️ | 需要任务队列系统 |
-| YouTube内容流水线 | ⚠️ | 需要YouTube API |
-| 多智能体内容工厂 | ⚠️ | 需要多个子代理配置 |
-| 播客制作 | ⚠️ | 需要播客平台API |
-
-### 基础设施 (2个)
-
-| 用例 | 状态 | 原因 |
-|------|------|------|
-| n8n工作流编排 | ⚠️ | 需要n8n实例+Webhook |
-| 自愈家庭服务器 | ⚠️ | 需要SSH服务器访问 |
-
-### 生产力 (17个)
-
-| 用例 | 状态 | 原因 |
-|------|------|------|
-| 多渠道客服 | ⚠️ | 需要多平台API |
-| 电话助理 | ⚠️ | 需要Twilio配置 |
-| 收件箱整理 | ⚠️ | 需要邮箱IMAP |
-| 个人CRM | ⚠️ | 需要日历API |
-| 动态仪表盘 | ⚠️ | 需要各种API集成 |
-
-### 研究与学习 (5个)
-
-| 用例 | 状态 | 原因 |
-|------|------|------|
-| AI财报追踪 | ⚠️ | 需要金融数据API |
-| 知识库RAG | ⚠️ | 需要向量数据库 |
-| 预构建创意验证 | ⚠️ | 需要GitHub/HN API |
-| 语义记忆搜索 | ⚠️ | 需要向量嵌入服务 |
-
----
-
-## ⏳ 可创建的用例（需要简单配置）
-
-### 早间简报 (Morning Brief)
-
-**所需**:
-1. 配置cron: 每天8点执行
-2. 配置消息渠道: 飞书/Telegram/Discord
-
-**提示词**:
-```
-每天早上8点给我发送早间简报，包含：
-1. 天气情况
-2. 今天的任务
-3. 有趣的新闻
-```
-
-### 健康追踪器
-
-**所需**:
-1. 创建话题记录
-2. 配置cron提醒
-3. 配置消息渠道
-
----
-
-## 🔧 已完成项目汇总
+## 完成的项目汇总
 
 | 项目 | 仓库 |
 |------|------|
-| 🌾 星露谷网页游戏 | https://github.com/feihu1991/stardew-web |
-| 📈 CryptoQuant量化工具 | https://github.com/feihu1991/crypto-trader |
-| 🎮 游戏开发流水线 | https://github.com/feihu1991/game-dev-pipeline |
-| 📊 Polymarket交易 | https://github.com/feihu1991/polymarket-autopilot |
-| 🔬 市场调研工厂 | https://github.com/feihu1991/market-research-factory |
+| 🌾 星露谷游戏 | feihu1991/stardew-web |
+| 📈 CryptoQuant | feihu1991/crypto-trader |
+| 🎮 游戏开发流水线 | feihu1991/game-dev-pipeline |
+| 📊 Polymarket交易 | feihu1991/polymarket-autopilot |
+| 🔬 市场调研工厂 | feihu1991/market-research-factory |
+| ☀️ 早间简报 | feihu1991/morning-brief |
+| ✅ Todoist集成 | feihu1991/todoist-integration |
+| 🧠 第二大脑 | feihu1991/second-brain |
+| 📚 知识库RAG | feihu1991/knowledge-base |
+| 🏥 健康追踪 | feihu1991/health-tracker |
 
 ---
 
-## 结论
+## 无法完成的用例 (28个)
 
-大部分用例需要用户在本地进行配置：
-- 飞书/钉钉/企业微信需要开发者后台创建应用
-- 小红书自动化需要Windows+Python环境
-- 大多数用例需要各种API密钥
-
-我已经完成了3个用例，另外2个(早间简报、健康追踪)可以通过配置cron和消息渠道实现。
-
-**建议**: 用户可以选择自己需要的用例，我来帮他们完成本地配置部分。
+原因：需要用户自行配置第三方服务
+- 飞书/钉钉/企业微信 → 需要开发者后台
+- 小红书 → 需要Windows+Python+Chrome
+- Reddit/YouTube/X → 需要API
+- n8n/服务器 → 需要本地SSH
